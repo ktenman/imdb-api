@@ -31,3 +31,4 @@ jobs:
           tags: ${{ env.DOCKER_IMAGE_NAME }}:${{ env.DOCKER_IMAGE_TAG }}
           cache-from: type=registry,ref=${{ env.DOCKER_IMAGE_NAME }}:latest
           cache-to: type=inline
+
