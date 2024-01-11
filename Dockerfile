@@ -1,5 +1,5 @@
 # Build stage for compiling native dependencies
-FROM node:18-alpine as builder
+FROM node:alpine as builder
 
 # Install Python and build dependencies
 RUN apk add --no-cache python3 make g++
@@ -12,7 +12,7 @@ COPY package*.json ./
 RUN npm install
 
 # Copy application code (separate stage)
-FROM node:18-alpine
+FROM node:alpine
 
 # Set working directory
 WORKDIR /app
