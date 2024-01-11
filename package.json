@@ -14,15 +14,15 @@
   "author": "tuhinpal <me@thetuhin.com>",
   "license": "Apache-2.0",
   "devDependencies": {
-    "axios": "^0.27.2",
-    "jest": "^28.1.0",
-    "wrangler": "^3.3.0"
+    "axios": "0.27.2",
+    "jest": "28.1.0",
+    "wrangler": "3.3.0"
   },
   "dependencies": {
-    "dom-parser": "^0.1.6",
-    "hono": "^1.4.1",
-    "html-entities": "^2.3.3",
-    "qs": "^6.11.1"
+    "dom-parser": "0.1.6",
+    "hono": "1.4.1",
+    "html-entities": "2.3.3",
+    "qs": "6.11.1"
   },
   "directories": {
     "test": "tests"
