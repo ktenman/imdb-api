@@ -1,26 +1,12 @@
-# Build stage for compiling native dependencies
-FROM node:alpine as builder
-
-# Install Python and build dependencies
-RUN apk add --no-cache python3 make g++
-
-# Set working directory
-WORKDIR /app
-
-# Install Node.js dependencies
-COPY package*.json ./
-RUN npm install
-
-# Copy application code (separate stage)
 FROM node:alpine
-
-# Set working directory
 WORKDIR /app
 
-# Copy node modules and built assets from the builder stage
-COPY --from=builder /app/node_modules ./node_modules
+# Copy and install dependencies, avoiding cache for this step
+COPY package*.json .
+RUN npm install --no-cache
+
+# Copy the rest of the application code
 COPY . .
 
-# Expose port and define command
 EXPOSE 3000
 CMD [ "npm", "start" ]
